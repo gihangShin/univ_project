@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<context:component-scan
+		base-package="com.univ.app.web" />
+
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!-- <prop key="java.lang.Exception">/controllError/loginErrorWithID.jsp</prop> -->
+				<prop key="java.lang.NullPointerException">/controllError/loginErrorWithID.jsp</prop>
+
+			</props>
+		</property>
+		<!-- <property name="defaultErrorView" value="/controllError/loginErrorWithID.jsp" 
+			/> -->
+	</bean>
+
+	<!-- HandlerMapping 등록 -->
+	<!-- Controller 목록 -->
+	<!--<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
+		<property name="mappings"> <props> <prop key="/insertMessage.do">insertMessage</prop> 
+		<prop key="/getMessageList.do">getMessageList</prop> <prop key="/deleteMessage.do">deleteMessage</prop> 
+		</props> </property> </bean> <bean id="insertMessage" class="com.hang.view.message.InsertMessageController" 
+		/> <bean id="getMessageList" class="com.hang.view.message.GetMessageListController" 
+		/> <bean id="deleteMessage" class="com.hang.view.message.DeleteMessageController" 
+		/> -->
+	<!-- ViewResolver 등록 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value=""></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+</beans>
