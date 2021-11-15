@@ -52,4 +52,10 @@ public class Board {
 		return this;
 	}
 
+	@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return "[BOARD"+board_id+" title : "+board_title+", writer : "+board_writer+", content : "+board_content+"]";
+		}
+	
 }
