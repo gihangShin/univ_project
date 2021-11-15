@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-<title>MAIN PAGE</title>
+<title>MAIN PAGE 마이크 테스트 하나 둘 셋</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
