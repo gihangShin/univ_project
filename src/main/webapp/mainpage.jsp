@@ -111,7 +111,7 @@
 					<!-- <a href="#" class="image featured"><img src="images/pic01.jpg"
 						alt="" /></a> -->
 					<p>${board.board_content }</p>
-					<!-- <footer>
+					<!-- <footer>	
 					<ul class="actions">
 						<li><a href="#" class="button big">Continue Reading</a></li>
 					</ul>
