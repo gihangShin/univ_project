@@ -1,17 +1,21 @@
 package com.univ.app.model.board;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+
+import com.univ.app.model.comment.Comment;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -55,6 +59,9 @@ public class Board {
 	@Column(name = "BOARDLIKE")
 	@ColumnDefault("0")
 	private int boardLike;
+	
+	@Transient
+	private List<Comment> comments;
 
 	@CreatedDate
 	@Column(name = "CREATED_DATE", updatable = false)

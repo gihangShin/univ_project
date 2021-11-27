@@ -63,4 +63,8 @@ public class Comment {
 		return this;
 	}
 	
+	@Override
+	public String toString() {
+		return "[comment seq "+commentSeq+", boardseq "+boardSeq+", writer "+commentWriter+", content "+commentContent+", like "+commentLike+"]";
+	}
 }

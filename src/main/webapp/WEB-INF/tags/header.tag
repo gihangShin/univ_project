@@ -11,7 +11,7 @@
 			<li><a href="#">Group Talk</a></li>
 			<li><a href="#">Private Talk</a></li>
 			<li><a href="#">My Page</a></li>
-			<li><a href="#">Sign Up</a></li>
+			<li><a href="logout.do">로그아웃</a></li>
 		</ul>
 	</nav>
 	<nav class="main">
@@ -38,7 +38,7 @@
 	<!-- Links -->
 	<section>
 		<ul class="links">
-			<li><a href="insertBoard">
+			<li><a href="insertboard.jsp">
 					<h3>글 올리기</h3>
 					<p>Feugiat tempus veroeros dolor</p>
 			</a></li>

@@ -6,10 +6,16 @@
 <meta charset="UTF-8">
 <title>IndexPage</title>
 <script type="text/javascript">
-	var fail = "${loginFail}";
-	console.log("fail " + fail);
-	if (fail != null) {
+	var notice = "${notice}";
+	console.log("notice " + notice);
+	if (notice === "loginfail") {
 		alert("로그인에 실패했습니다.");
+	}else if(notice === "signupsuccess"){
+		alert("회원가입에 성공했습니다.");
+	}else if(notice === "signupfail"){
+		alert("회원가입에 실패했습니다.");
+	}else if(notice === "logout"){
+		alert("로그아웃되었습니다.");
 	}
 </script>
 <link rel="stylesheet" href="assets/css/main.css" />
