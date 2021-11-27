@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="ct" %>
 <!DOCTYPE HTML>
 <!--
 	Future Imperfect by HTML5 UP
@@ -9,84 +10,17 @@
 -->
 <html>
 <head>
-<title>MAIN PAGE</title>
+<title>MAIN PAGE 마이크 테스트 하나 둘 셋</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 <link rel="stylesheet" href="assets/css/main.css" />
-<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
 <body>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-
-		<!-- Header -->
-		<header id="header">
-			<h1>
-				<a href="#">프로젝트 설계</a>
-			</h1>
-			<nav class="links">
-				<ul>
-					<li><a href="#">Feed</a></li>
-					<li><a href="#">Group Talk</a></li>
-					<li><a href="#">Private Talk</a></li>
-					<li><a href="#">My Page</a></li>
-					<li><a href="#">Sign Up</a></li>
-				</ul>
-			</nav>
-			<nav class="main">
-				<ul>
-					<li class="search"><a class="fa-search" href="#search">Search</a>
-						<form id="search" method="get" action="#">
-							<input type="text" name="query" placeholder="Search" />
-						</form></li>
-					<li class="menu"><a class="fa-bars" href="#menu">Menu</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<!-- Menu -->
-		<section id="menu">
-
-			<!-- Search -->
-			<section>
-				<form class="search" method="get" action="#">
-					<input type="text" name="query" placeholder="Search" />
-				</form>
-			</section>
-
-			<!-- Links -->
-			<section>
-				<ul class="links">
-					<li><a href="updateFeed.jsp">
-							<h3>글 올리기</h3>
-							<p>Feugiat tempus veroeros dolor</p>
-					</a></li>
-					<li><a href="#">
-							<h3>Dolor sit amet</h3>
-							<p>Sed vitae justo condimentum</p>
-					</a></li>
-					<li><a href="#">
-							<h3>Feugiat veroeros</h3>
-							<p>Phasellus sed ultricies mi congue</p>
-					</a></li>
-					<li><a href="#">
-							<h3>Etiam sed consequat</h3>
-							<p>Porta lectus amet ultricies</p>
-					</a></li>
-				</ul>
-			</section>
-
-			<!-- Actions -->
-			<section>
-				<ul class="actions vertical">
-					<li><a href="#" class="button big fit">Log In</a></li>
-				</ul>
-			</section>
-
-		</section>
+	
+		<ct:header/>
 
 		<!-- Main -->
 		<div id="main">
@@ -111,7 +45,11 @@
 					<!-- <a href="#" class="image featured"><img src="images/pic01.jpg"
 						alt="" /></a> -->
 					<p>${board.board_content }</p>
+<<<<<<< HEAD
 					<!-- <footer>	
+=======
+					<!-- <footer>
+>>>>>>> branch 'master' of https://github.com/gihangShin/univ_project.git
 					<ul class="actions">
 						<li><a href="#" class="button big">Continue Reading</a></li>
 					</ul>
@@ -524,12 +462,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 			<!-- Intro -->
 			<section id="intro">
-				<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
+				<a href="#" class="logo"><img src="im	ages/logo.jpg" alt="" /></a>
+				<h2>${user.userName}님 환영합니다.</h2>
 				<header>
 					<h2>updated Friends</h2>
 					<p>
 						업데이트한 친구의 게시글을 확인해 보세요 <br>
-						<a href="#">새로고침 버튼 예정</a>
+						<button onclick="location.href('mainpage.do')">새로고침</button>
 					</p>
 				</header>
 			</section>
@@ -537,7 +476,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<!-- Mini Posts -->
 			<section>
 				<div class="mini-posts">
-
+					<h3>인기 많은 Feeds</h3>
 					<!-- Mini Post -->
 					<article class="mini-post">
 						<header>

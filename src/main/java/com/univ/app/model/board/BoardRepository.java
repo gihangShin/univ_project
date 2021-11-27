@@ -1,7 +1,11 @@
 package com.univ.app.model.board;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface BoardRepository extends JpaRepository<Board, Long> {
-
+	
+	Board findByBoardSeq(long BoardSeq);
+	
 }

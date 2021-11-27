@@ -1,20 +1,27 @@
 package com.univ.app.model.board;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
 @Getter
+@Setter
 @Configuration
 public class Board {
 
@@ -22,40 +29,72 @@ public class Board {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long board_id;
+	private long boardSeq;
 
-	@Column(name = "BOARD_NUM")
-	private Integer board_num; // 게시판 종류
+	@Column(name = "fileName")
+	@ColumnDefault("null")
+	private String fileName;
 
-	@Column(name = "BOARD_TITLE")
-	private String board_title;
+	@Column(name = "fileOriName")
+	@ColumnDefault("null")
+	private String fileOriName;
 
-	@Column(name = "BOARD_WRITER")
-	private String board_writer;
+	@Column(name = "fileUri")
+	@ColumnDefault("null")
+	private String fileUri;
 
-	@Column(name = "BOARD_CONTENT")
-	private String board_content;
+	@Column(name = "BOARDTITLE")
+	private String boardTitle;
+
+	@Column(name = "BOARDWRITER")
+	private String boardWriter;
+
+	@Column(name = "BOARDCONTENT")
+	private String boardContent;
+
+	@Column(name = "BOARDLIKE")
+	@ColumnDefault("0")
+	private int boardLike;
+
+	@CreatedDate
+	@Column(name = "CREATED_DATE", updatable = false)
+	private LocalDateTime created_date;
+
+	@LastModifiedDate
+	@Column(name = "MODIFIED_DATE")
+	private LocalDateTime modified_date;
 
 	@Builder
-	public Board(String board_title, String board_writer, String board_content, int board_num) {
-		this.board_num = board_num;
-		this.board_title = board_title;
-		this.board_writer = board_writer;
-		this.board_content = board_content;
+	public Board(String filename, String fileOriName, String fileuri, String board_title, String board_writer,
+			String board_content, int board_like) {
+		this.fileName = filename;
+		this.fileOriName = fileOriName;
+		this.fileUri = fileuri;
+		this.boardTitle = board_title;
+		this.boardWriter = board_writer;
+		this.boardContent = board_content;
+		this.boardLike = board_like;
 	}
 
-	public Board update(String board_title, String board_writer, String board_content, int board_num) {
-		this.board_num = board_num;
-		this.board_title = board_title;
-		this.board_writer = board_writer;
-		this.board_content = board_content;
+	// 수정 사항
+	// 파일, 제목, 내용, like수
+	public Board update(String filename, String fileOriName, String fileuri, String board_title, String board_content,
+			int board_like) {
+		this.fileName = filename;
+		this.fileOriName = fileOriName;
+		this.fileUri = fileuri;
+		this.boardTitle = board_title;
+		this.boardContent = board_content;
+		this.boardLike = board_like;
 		return this;
 	}
 
 	@Override
-		public String toString() {
-			// TODO Auto-generated method stub
-			return "[BOARD"+board_id+" title : "+board_title+", writer : "+board_writer+", content : "+board_content+"]";
-		}
-	
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "[BOARD" + boardSeq + " filename : " + fileName + ", fileOriname : " + fileOriName + ", fileuri : "
+				+ fileUri + ", title : " + boardTitle + ", writer : " + boardWriter + ", content : " + boardContent
+				+ "]";
+	}
+
 }

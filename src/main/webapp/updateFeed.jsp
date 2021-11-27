@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML>
 <!--
 	Future Imperfect by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
 <html>
 <head>
 <title>Single - Future Imperfect by HTML5 UP</title>
@@ -108,18 +108,18 @@
 				<form action="insertBoard.do" method="post">
 					<table>
 						<tr>
-							<td>title</td>
-							<td><input type="text" id="board_title" name="board_title"
+							<td>제목</td>
+							<td><input type="text" id="boardTitle" name="boardTitle"
 								required="required">
 						</tr>
 						<tr>
-							<td>writer</td>
-							<td><input type="text" id="board_writer" name="board_writer"></td>
+							<td>작성자</td>
+							<td><input type="text" id="boardWriter" name="boardWriter" readonly="readonly" value="${user.userName}"></td>
 						</tr>
 						<tr>
 							<td>content</td>
-							<td><textarea rows="10" cols="10" id="board_content"
-									name="board_content"></textarea></td>
+							<td><textarea rows="10" cols="10" id="boardContent"
+									name="boardContent"></textarea></td>
 						</tr>
 						<tr>
 							<td><button type="submit"></button></td>

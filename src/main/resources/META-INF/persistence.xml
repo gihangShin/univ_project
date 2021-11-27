@@ -6,6 +6,7 @@
 	<persistence-unit name="univ-project">
 		<class>com.univ.app.model.user.User</class>
 		<class>com.univ.app.model.board.Board</class>
+		<class>com.univ.app.model.comment.Comment</class>
 		<!-- <class>com.univ.app.model.BaseTimeEntity</class> -->
 
 		<properties>

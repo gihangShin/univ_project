@@ -12,7 +12,7 @@ public class UserServiceClient {
 
 		EntityTransaction tx = em.getTransaction();
 		User user = User.builder().user_id("test:id").user_password("test:password").user_name("test:name")
-				.user_nickname("test:nickname").user_email("test:email").build();
+				.user_email("test:email").build();
 
 		try {
 			tx.begin();
