@@ -20,9 +20,7 @@ import lombok.Setter;
 @RequiredArgsConstructor
 @Configuration
 @Table(name = "USER")
-public class User{
-
-//	private static final long serialVersionUID = 1L;
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,10 +37,9 @@ public class User{
 
 	@Column(name = "USER_EMAIL")
 	private String userEmail;
-	
+
 	@Builder
-	public User(Long user_seq, String user_id, String user_password, String user_name,
-			String user_email) {
+	public User(Long user_seq, String user_id, String user_password, String user_name, String user_email) {
 		this.userSeq = user_seq;
 		this.userId = user_id;
 		this.userPassword = user_password;
@@ -56,10 +53,10 @@ public class User{
 		this.userEmail = user_email;
 		return this;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "[ user : "+userSeq+", "+userId+", "+userPassword+", "+userName+", "+userEmail+"]";
+		return "[ user : " + userSeq + ", " + userId + ", " + userPassword + ", " + userName + ", " + userEmail + "]";
 	}
-	
+
 }
